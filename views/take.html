@@ -1,0 +1,40 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiosk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/styles.css" />
+    <link rel="stylesheet" href="../public/help-take.css" />
+    <script src="../scripts/load-page.js" defer></script>
+    <script src="../scripts/take.js" defer></script>
+    <script src="../scripts/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <img
+      src="../icons/home.png"
+      alt="집 아이콘  제작자: Freepik - Flaticon"
+      class="home-img"
+      />
+      <h1>식사하실 장소를 선택해주세요</h1>
+    </header>
+   <main>
+    <ul>
+        <li class="take-item-center" data-take="1">
+         <img src="../icons/take-in.png" alt="떡볶이 아이콘  제작자: BZZRINCANTATION - Flaticon" data-take="1">
+         <div data-take="1">매장 식사</div>
+        </li>
+        <li class="take-item-center" data-take="0">
+          <img src="../icons/take-out.png" alt="테이크 아웃 아이콘  제작자: Freepik - Flaticon" data-take="0">
+          <div data-take="0">포장</div>
+        </li>
+    </ul>
+   </main>
+  </body>
+</html>

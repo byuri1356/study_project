@@ -1,0 +1,38 @@
+header div {
+  height: 5rem;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 5em;
+}
+
+#menu-category-section {
+  margin: 2rem auto;
+  padding:0.2rem;
+  width: 80%;
+  height: 6rem;
+  background-color: white;
+  border-style: solid;
+}
+
+#menu-category-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-category-items{
+    cursor:pointer;
+}
+
+.menu-category-img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+}
+
+.menu-category-text {
+  text-align: center;
+}

@@ -1,0 +1,44 @@
+h1{
+    margin: 0;
+    padding: 5rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+main{
+    width: 100%;
+    height: 60%;
+}
+
+ul{
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+li{
+    margin: 0 2rem;
+    padding: 4rem 5rem;
+    background-color: white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+div{
+    margin-top: 1.5rem;
+    font-size: 2rem;
+}
+
+.help-item-center,
+.take-item-center{
+    text-align: center;
+}
+
+img{
+    width: 12rem;
+    object-fit: cover;
+}
