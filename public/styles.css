@@ -11,28 +11,37 @@ body {
   background-color: rgb(253, 249, 253);
 }
 
-.home-img {
-  cursor: pointer;
-  position: absolute;
-  top: 2.5rem;
-  left: 5rem;
+.header-grid-container{
+  margin: 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: 7rem auto 7rem;
+  grid-template-rows: 7rem;
+  align-items: start;
+}
+
+.header-grid-imgItem {
+  margin-top: 0.5rem;
   width: 3rem;
   height: 3rem;
   object-fit: cover;
+  cursor: pointer;
 }
 
-.help-button {
-    cursor:pointer;
-    padding: 0.5rem;
-    position: absolute;
-    top: 2.5rem;
-    left: 80rem;
+.header-grid-h1Item{
+  margin: 0;
+  justify-self: center;
+  font-size: 4.5rem;
+}
+
+
+.header-grid-buttonItem {
+    margin-top: 0.5rem;
     background-color: rgb(235, 47, 0);
     border-radius: 10px;
     border: 0;
     outline: 0;
-    font-size: 1.5rem;
-    text-align: right;
+    font-size: 2rem;
     font-weight: 600;
     color: azure;
+    cursor:pointer;
   }

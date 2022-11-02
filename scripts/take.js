@@ -1,4 +1,4 @@
-const homeElement = document.querySelector(".home-img");
+const homeElement = document.querySelector(".header-grid-imgItem");
 const takeItemElements = document.querySelectorAll(".take-item-center");
 
 for (takeItemElement of takeItemElements) {
