@@ -31,10 +31,7 @@
 
     <main id="main-grid-container">
       <section id="menu-category-container" class="main-grid-item">
-        <div
-          class="menu-category-items menu-category-selected"
-          data-category="0"
-        >
+        <div class="menu-category-items" data-category="0">
           <img
             src="../icons/gimbab.png"
             alt="김밥 아이콘  제작자: Nhor Phai - Flaticon"
@@ -43,6 +40,7 @@
           />
           <div class="menu-category-text" data-category="0">김밥류</div>
         </div>
+
         <div class="menu-category-items" data-category="1">
           <img
             src="../icons/ramyun.png"
@@ -52,6 +50,7 @@
           />
           <div class="menu-category-text" data-category="1">라면류</div>
         </div>
+
         <div class="menu-category-items" data-category="2">
           <img
             src="../icons/bunsik.png"
@@ -61,6 +60,7 @@
           />
           <div class="menu-category-text" data-category="2">분식류</div>
         </div>
+
         <div class="menu-category-items" data-category="3">
           <img
             src="../icons/drink.png"
@@ -74,24 +74,34 @@
 
       <section id="shopping-basket-container" class="main-grid-item">
         <h2 class="shopping-basket-name">장바구니</h2>
-        <div class="shopping-basket-item">
-          <span class="shopping-basket-text">원조 김밥 &nbsp;</span>
-          <button class="shopping-basket-upButton"><</button>
-          <span class="shopping-basket-number">0</span>
-          <button class="shopping-basket-downButton">></button>
-          <span class="shopping-basket-total">&nbsp; 3500원</span>
+
+        <div class="shopping-basket-item-container">
+          <!-- <div class="shopping-basket-item">
+            <button class="shopping-basket-x">X</button>
+            <span class="shopping-basket-text">원조 김밥 &nbsp;</span>
+            <button class="shopping-basket-upButton"><</button>
+            <span class="shopping-basket-number">0</span>
+            <button class="shopping-basket-downButton">></button>
+            <span class="shopping-basket-total">&nbsp; 3500원</span>
+          </div>
+
+          <div class="shopping-basket-item">
+            <button class="shopping-basket-x">X</button>
+            <span class="shopping-basket-text">참치 김밥 &nbsp;</span>
+            <button class="shopping-basket-downButton"><</button>
+            <span class="shopping-basket-number">0</span>
+            <button class="shopping-basket-upButton">></button>
+            <span class="shopping-basket-total">&nbsp; 4000원</span>
+          </div> -->
         </div>
-        <div class="shopping-basket-item">
-          <span class="shopping-basket-text">원조 김밥 &nbsp;</span>
-          <button class="shopping-basket-upButton"><</button>
-          <span class="shopping-basket-number">0</span>
-          <button class="shopping-basket-downButton">></button>
-          <span class="shopping-basket-total">&nbsp; 3500원</span>
+
+        <div class="shopping-basket-sum">
+          <h3>0원</h3>
         </div>
       </section>
 
       <section id="menu-sub-container" class="main-grid-item">
-        <div class="menu-sub-items" data-row="0" data-column="0">
+        <!-- <div class="menu-sub-items" data-row="0" data-column="0">
           <img
             src="https://images.yogiyo.co.kr/image/yogiyo/STOCK_IMG/%EB%B6%84%EC%8B%9D%EB%94%94%EC%A0%80%ED%8A%B8/%EB%B6%84%EC%8B%9D/%EC%8A%A4%ED%83%81_20190701_DHK%EC%B4%AC%EC%98%81_%EC%95%BC%EC%B1%84%EA%B9%80%EB%B0%A5_Side_01_1080x640.jpg?width=384&amp;height=273&amp;quality=100"
             class="menu-sub-img"
@@ -102,8 +112,8 @@
             원조 김밥
           </div>
           <div class="menu-sub-price" data-row="0" data-column="0">3500원</div>
-          <div class="menu-sub-put" data-row="0" data-column="0">담기</div>
         </div>
+
         <div class="menu-sub-items" data-row="0" data-column="1">
           <img
             src="https://images.yogiyo.co.kr/image/yogiyo/STOCK_IMG/%EB%B6%84%EC%8B%9D%EB%94%94%EC%A0%80%ED%8A%B8/%EB%B6%84%EC%8B%9D/%EC%8A%A4%ED%83%81_20190801_DHK%EC%B4%AC%EC%98%81_%EC%B0%B8%EC%B9%98%EA%B9%80%EB%B0%A5_Side01_1080x640.jpg?width=384&height=273&quality=100"
@@ -115,8 +125,8 @@
             참치 김밥
           </div>
           <div class="menu-sub-price" data-row="0" data-column="1">4000원</div>
-          <div class="menu-sub-put" data-row="0" data-column="1">담기</div>
         </div>
+
         <div class="menu-sub-items" data-row="0" data-column="2">
           <img
             src="https://images.yogiyo.co.kr/image/yogiyo/STOCK_IMG/%EB%B6%84%EC%8B%9D%EB%94%94%EC%A0%80%ED%8A%B8/%EB%B6%84%EC%8B%9D/%EC%8A%A4%ED%83%81_20190801_DHK%EC%B4%AC%EC%98%81_%EB%8F%88%EA%B9%8C%EC%8A%A4%EA%B9%80%EB%B0%A5_Side01_1080x640.jpg?width=384&height=273&quality=100"
@@ -128,9 +138,15 @@
             돈까스 김밥
           </div>
           <div class="menu-sub-price" data-row="0" data-column="2">4500원</div>
-          <div class="menu-sub-put" data-row="0" data-column="2">담기</div>
-        </div>
+        </div> -->
       </section>
     </main>
+
+    <footer class="footer-grid-container">
+      <div>
+        <button class="header-grid-buttonItem">이전</button>
+        <button class="header-grid-buttonItem">다음</button>
+      </div>
+    </footer>
   </body>
 </html>

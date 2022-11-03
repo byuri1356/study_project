@@ -1,5 +1,6 @@
 let needHelp = -1;
 let takeInOUT = -1;
+let total_price = 0;
 
 const menu = [
   [
