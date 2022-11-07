@@ -1,6 +1,7 @@
 let needHelp = -1;
 let takeInOUT = -1;
 let total_price = 0;
+
 let menuCategoryCount = {
   num: 0,
   index: -1,
@@ -136,3 +137,13 @@ var menu = [
     },
   ],
 ];
+
+//index.html
+const bodyElement = document.querySelector('#index-page-body');
+
+//help.html
+const homeElement = document.querySelector(".header-grid-imgItem");  // index.html 빼고 모두 사용
+const helpItemElements = document.querySelectorAll(".help-item-center");
+
+//take.html
+const takeItemElements = document.querySelectorAll(".take-item-center");

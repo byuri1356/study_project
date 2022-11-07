@@ -1,32 +1,72 @@
 let menuItemElements = document.querySelectorAll(".menu-sub-items");
-let cancelButtonElements = document.querySelectorAll('.shopping-basket-x');
-let downButtonElements = document.querySelectorAll('.shopping-basket-downButton');
-let upButtonElements = document.querySelectorAll('.shopping-basket-upButton');
+let cancelButtonElements = document.querySelectorAll(".shopping-basket-x");
+let downButtonElements = document.querySelectorAll(
+  ".shopping-basket-downButton"
+);
+let upButtonElements = document.querySelectorAll(".shopping-basket-upButton");
+let totalPriceElement = document.querySelector(".shopping-basket-sum h3");
 let currentRow;
 let currentColumn;
+let testquery = document.querySelector('#menu-category-container');
 
-function downAFew(){
+function downAFew(event) {
+  const selectedDownButton = event.target;
+  const selectedRow = selectedDownButton.dataset.row;
+  const selectedColumn = selectedDownButton.dataset.column;
+  const downParentElement = selectedDownButton.parentElement;
+  console.dir(downParentElement);
 
+  if (menu[selectedRow][selectedColumn].afew <= 1) return;
+  else {
+    menu[selectedRow][selectedColumn].afew -= 1;
+    total_price -= menu[selectedRow][selectedColumn].price;
+    downParentElement.children[3].innerText =
+      menu[selectedRow][selectedColumn].afew;
+    downParentElement.children[5].innerText =
+      menu[selectedRow][selectedColumn].afew *
+      menu[selectedRow][selectedColumn].price + "원";;
+    totalPriceElement.innerText = total_price + "원";
+  }
 }
 
-function upAFew(){
+function upAFew(event) {
+  console.dir(testquery.innerHTML);
+  const selectedupButton = event.target;
+  const selectedRow = selectedupButton.dataset.row;
+  const selectedColumn = selectedupButton.dataset.column;
+  const upParentElement = selectedupButton.parentElement;
 
+  if (menu[selectedRow][selectedColumn].afew >= 10) return;
+  else {
+    menu[selectedRow][selectedColumn].afew += 1;
+    total_price += menu[selectedRow][selectedColumn].price;
+    upParentElement.children[3].innerText =
+      menu[selectedRow][selectedColumn].afew;
+    upParentElement.children[5].innerText =
+      menu[selectedRow][selectedColumn].afew *
+      menu[selectedRow][selectedColumn].price + "원";
+    totalPriceElement.innerText = total_price + "원";
+  }
 }
 
-function cancelMenu(event){
+function cancelMenu(event) {
   const selectedMenuItem = event.target;
   const selectedRow = selectedMenuItem.dataset.row;
   const selectedColumn = selectedMenuItem.dataset.column;
 
-  menu[selectedRow][selectedColumn].afew =0;
-  menu[selectedRow][selectedColumn].isSelect =0;
+  total_price -=
+    menu[selectedRow][selectedColumn].afew *
+    menu[selectedRow][selectedColumn].price;
+  totalPriceElement.innerText = total_price + "원";
+  menu[selectedRow][selectedColumn].afew = 1;
+  menu[selectedRow][selectedColumn].isSelect = 0;
   menuItemElements = document.querySelectorAll(".menu-sub-items");
-  if(currentRow == selectedRow) {
-    menuItemElements[selectedColumn].classList.remove('menu-sub-selected')
+  if (currentRow == selectedRow) {
+    menuItemElements[selectedColumn].classList.remove("menu-sub-selected");
   }
 
   selectedMenuItem.parentElement.remove();
-
+  
 }
 
 function selectCategory(event) {
@@ -82,10 +122,9 @@ function selectCategory(event) {
   }
 
   menuItemElements = document.querySelectorAll(".menu-sub-items");
-  for(menuItemElement of menuItemElements) {
-    menuItemElement.addEventListener('click', selectMenu);
+  for (menuItemElement of menuItemElements) {
+    menuItemElement.addEventListener("click", selectMenu);
   }
-
 }
 
 function selectMenu(event) {
@@ -99,51 +138,74 @@ function selectMenu(event) {
   }
 
   if (targetItem.classList.contains("menu-sub-selected")) {
+    total_price -=
+      menu[selectedRow][selectedColumn].afew *
+      menu[selectedRow][selectedColumn].price;
+    totalPriceElement.innerText = total_price + "원";
+
     menu[selectedRow][selectedColumn].isSelect = 0;
-    menu[selectedRow][selectedColumn].afew =0;
+    menu[selectedRow][selectedColumn].afew = 1;
     targetItem.classList.remove("menu-sub-selected");
 
-    const shoppingBasketItemElements = document.querySelectorAll('.shopping-basket-item');
-    for( shoppingBasketItemElement of shoppingBasketItemElements){
-      if(shoppingBasketItemElement.dataset.row == selectedRow && shoppingBasketItemElement.dataset.column == selectedColumn){
+    const shoppingBasketItemElements = document.querySelectorAll(
+      ".shopping-basket-items"
+    );
+    for (shoppingBasketItemElement of shoppingBasketItemElements) {
+      if (
+        shoppingBasketItemElement.dataset.row == selectedRow &&
+        shoppingBasketItemElement.dataset.column == selectedColumn
+      ) {
         shoppingBasketItemElement.remove();
         // 여기에 total_sum 추가
         break;
       }
     }
-
   } else {
+    total_price +=
+      menu[selectedRow][selectedColumn].afew *
+      menu[selectedRow][selectedColumn].price;
+    totalPriceElement.innerText = total_price + "원";
+
     menu[selectedRow][selectedColumn].isSelect = 1;
     targetItem.classList.add("menu-sub-selected");
 
-    const shoppingBasketContainer = document.querySelector('.shopping-basket-item-container');
+    const shoppingBasketContainer = document.querySelector(
+      ".shopping-basket-item-container"
+    );
 
-    const newDivItems = document.createElement('div');
-    const newButtonX = document.createElement('button');
-    const newSpanText = document.createElement('span');
-    const newButtonDown = document.createElement('button');
-    const newSpanNumber = document.createElement('span');
-    const newButtonUp = document.createElement('button');
-    const newSpanTotal = document.createElement('span');
+    const newDivItems = document.createElement("div");
+    const newButtonX = document.createElement("button");
+    const newSpanText = document.createElement("span");
+    const newButtonDown = document.createElement("button");
+    const newSpanNumber = document.createElement("span");
+    const newButtonUp = document.createElement("button");
+    const newSpanTotal = document.createElement("span");
 
-    newDivItems.setAttribute('class', 'shopping-basket-item');
+    newDivItems.setAttribute("class", "shopping-basket-items");
     newDivItems.setAttribute("data-row", selectedRow);
     newDivItems.setAttribute("data-column", selectedColumn);
-    newButtonX.setAttribute('class', 'shopping-basket-x');
+    newButtonX.setAttribute("class", "shopping-basket-x");
     newButtonX.setAttribute("data-row", selectedRow);
     newButtonX.setAttribute("data-column", selectedColumn);
-    newSpanText.setAttribute('class', 'shopping-basket-text');
-    newButtonDown.setAttribute('class', 'shopping-basket-upButton');
-    newSpanNumber.setAttribute('class', 'shopping-basket-number');
-    newButtonUp.setAttribute('class', 'shopping-basket-downButton');
-    newSpanTotal.setAttribute('class', 'shopping-basket-total');
+    newSpanText.setAttribute("class", "shopping-basket-text");
+    newButtonDown.setAttribute("class", "shopping-basket-downButton");
+    newButtonDown.setAttribute("data-row", selectedRow);
+    newButtonDown.setAttribute("data-column", selectedColumn);
+    newSpanNumber.setAttribute("class", "shopping-basket-number");
+    newButtonUp.setAttribute("class", "shopping-basket-upButton");
+    newButtonUp.setAttribute("data-row", selectedRow);
+    newButtonUp.setAttribute("data-column", selectedColumn);
+    newSpanTotal.setAttribute("class", "shopping-basket-total");
 
     newButtonX.innerText = "X";
     newSpanText.innerText = menu[selectedRow][selectedColumn].name;
     newButtonDown.innerText = "<";
-    newSpanNumber.innerText = menu[selectedRow][selectedColumn].afew; 
+    newSpanNumber.innerText = menu[selectedRow][selectedColumn].afew;
     newButtonUp.innerText = ">";
-    newSpanTotal.innerText = menu[selectedRow][selectedColumn].afew *  menu[selectedRow][selectedColumn].price +"원";
+    newSpanTotal.innerText =
+      menu[selectedRow][selectedColumn].afew *
+        menu[selectedRow][selectedColumn].price +
+      "원";
 
     newDivItems.appendChild(newButtonX);
     newDivItems.appendChild(newSpanText);
@@ -155,22 +217,21 @@ function selectMenu(event) {
     shoppingBasketContainer.appendChild(newDivItems);
   }
 
-  const sumElement = document.querySelector('.shopping-basket-sum h3');
-  sumElement.innerText = total_price +"원";
+  const sumElement = document.querySelector(".shopping-basket-sum h3");
+  sumElement.innerText = total_price + "원";
 
-  cancelButtonElements = document.querySelectorAll('.shopping-basket-x');
-  for(cancelButtonElement of cancelButtonElements){
-    cancelButtonElement.addEventListener('click', cancelMenu);
+  cancelButtonElements = document.querySelectorAll(".shopping-basket-x");
+  for (cancelButtonElement of cancelButtonElements) {
+    cancelButtonElement.addEventListener("click", cancelMenu);
   }
 
-  downButtonElements = document.querySelectorAll('.shopping-basket-downButton');
-  for(downButtonElement of downButtonElements){
-    downButtonElement.addEventListener('click', downAFew);
+  downButtonElements = document.querySelectorAll(".shopping-basket-downButton");
+  for (downButtonElement of downButtonElements) {
+    downButtonElement.addEventListener("click", downAFew);
   }
 
-  upButtonElements = document.querySelectorAll('.shopping-basket-downButton');
-  for(upButtonElement of upButtonElements){
-    upButtonElement.addEventListener('click', upAFew);
+  upButtonElements = document.querySelectorAll(".shopping-basket-upButton");
+  for (upButtonElement of upButtonElements) {
+    upButtonElement.addEventListener("click", upAFew);
   }
-
 }

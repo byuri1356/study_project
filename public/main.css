@@ -1,7 +1,7 @@
 #main-grid-container {
   margin-left: 7rem;
   display: grid;
-  grid-template-columns: minmax(35rem, 60rem) 20rem;
+  grid-template-columns: minmax(30rem, 55rem) 25rem;
   grid-template-rows: 8.5rem minmax(18rem, auto);
   column-gap: 2rem;
   row-gap: 2rem;
@@ -43,16 +43,11 @@
 
 #shopping-basket-container {
   display: grid;
-  grid-template-columns: 20rem;
+  grid-template-columns: 25rem;
   grid-template-rows: auto minmax(20rem, auto) auto;
   text-align: center;
   background-color: white;
   border-style: solid;
-}
-
-.shopping-basket-item{
-  display:flex;
-  justify-content: space-around;
 }
 
 .shopping-basket-name {
@@ -60,15 +55,35 @@
   font-size: 2.5rem;
 }
 
-.shopping-basket-item {
+.shopping-basket-items {
+  display: flex;
+  justify-content: left;
   margin: 1rem auto;
 }
 
-.shopping-basket-sum{
+.shopping-basket-items button,
+span {
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.shopping-basket-items .shopping-basket-x {
+  margin-left: 2rem;
+}
+
+.shopping-basket-items .shopping-basket-text {
+  width: 5rem;
+}
+
+.shopping-basket-items .shopping-basket-number {
+  width: 2rem;
+}
+
+.shopping-basket-sum {
   justify-self: end;
 }
 
-.shopping-basket-sum h3{
+.shopping-basket-sum h3 {
   margin: 1rem 2rem;
   font-size: 2.5rem;
 }
@@ -76,6 +91,7 @@
 #menu-sub-container {
   padding: 1rem;
   display: flex;
+  height: 19rem;
   justify-content: space-around;
   align-items: center;
   background-color: white;
@@ -101,11 +117,11 @@
   border-radius: 1rem;
 }
 
-.footer-grid-container{
+.footer-grid-container {
   margin: 1.5rem 7rem;
   text-align: right;
 }
 
-.footer-grid-container button{
+.footer-grid-container button {
   margin-left: 1rem;
 }

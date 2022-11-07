@@ -1,3 +1,3 @@
-const bodyElement = document.querySelector('body');
+//const bodyElement = document.querySelector('body');
 
 bodyElement.addEventListener('click', helpPage);
