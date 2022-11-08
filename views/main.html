@@ -24,10 +24,9 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
-    <script src="../scripts/app.js"></script>
+    <script src="../scripts/config.js" defer></script>
     <script src="../scripts/load-page.js" defer></script>
     <script src="../scripts/menu.js" defer></script>
-    <script src="../scripts/main.js" defer></script>
   </head>
   <body>
     <header class="header-grid-container">
@@ -37,7 +36,7 @@
         class="header-grid-imgItem"
       />
       <h1 class="header-grid-h1Item">메뉴 & 주문</h1>
-      <button class="header-grid-buttonItem">도움말</button>
+      <button id="help-main" class="alert-button-item">도움말</button>
     </header>
 
     <main id="main-grid-container">
@@ -155,15 +154,12 @@
 
     <footer class="footer-grid-container">
       <div>
-        <button id="prev-to-take" class="header-grid-buttonItem">이전</button>
-        <button id="next-to-detail" class="header-grid-buttonItem">다음</button>
+        <button id="prev-to-take" class="alert-button-item">이전</button>
+        <button id="next-to-detail" class="alert-button-item">다음</button>
       </div>
     </footer>
     <script>
-      console.log(menuInnerHTML);
-      console.log(shoppingBasketInnerHTML);
-      console.log(needHelp);
-      console.log(takeInOUT);
+    
     </script>
   </body>
 </html>

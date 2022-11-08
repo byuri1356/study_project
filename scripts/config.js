@@ -1,13 +1,16 @@
+//
+//variable
+//
+
 let needHelp = -1;
 let takeInOUT = -1;
 let total_price = 0;
 
-let menuCategoryCount = {
-  num: 0,
-  index: -1,
-}
+let currentRow = -1;
+let initPage = true;
+let menuBasketInfos = new Array();
 
-var menu = [
+let menu = [
   [
     {
       name: "원조 김밥",
@@ -138,12 +141,88 @@ var menu = [
   ],
 ];
 
+//variable save & load
+function saveVariable() {
+  localStorage.setItem("needHelp", JSON.stringify(needHelp));
+  localStorage.setItem("takeInOUT", JSON.stringify(takeInOUT));
+  localStorage.setItem("total_price", JSON.stringify(total_price));
+
+  localStorage.setItem("currentRow", JSON.stringify(currentRow));
+  localStorage.setItem("initPage", JSON.stringify(initPage));
+  localStorage.setItem("menuBasketInfos", JSON.stringify(menuBasketInfos));
+
+  localStorage.setItem("menu", JSON.stringify(menu));
+}
+
+function loadVariable() {
+  if (JSON.parse(localStorage.getItem("needHelp")) != null) {
+    needHelp = JSON.parse(localStorage.getItem("needHelp"));
+  }
+  if (JSON.parse(localStorage.getItem("takeInOUT")) != null) {
+    takeInOUT = JSON.parse(localStorage.getItem("takeInOUT"));
+  }
+  if (JSON.parse(localStorage.getItem("total_price")) != null) {
+    total_price = JSON.parse(localStorage.getItem("total_price"));
+  }
+
+  if (JSON.parse(localStorage.getItem("currentRow")) != null) {
+    currentRow = JSON.parse(localStorage.getItem("currentRow"));
+  }
+  if (JSON.parse(localStorage.getItem("initPage")) != null) {
+    initPage = JSON.parse(localStorage.getItem("initPage"));
+  }
+  if (JSON.parse(localStorage.getItem("menuBasketInfos")) != null) {
+    menuBasketInfos = JSON.parse(localStorage.getItem("menuBasketInfos"));
+  }
+
+  if (JSON.parse(localStorage.getItem("menu")) != null) {
+    menu = JSON.parse(localStorage.getItem("menu"));
+  }
+  console.log(needHelp);
+  console.log(takeInOUT);
+  console.log(total_price);
+
+  console.log(currentRow);
+  console.log(initPage);
+  console.log(menuBasketInfos);
+  
+  console.log(menu);
+}
+
+loadVariable();
+localStorage.clear();
+
+//
+//const element
+//
+
 //index.html
-const bodyElement = document.querySelector('#index-page-body');
+const bodyElement = document.querySelector("#index-page-body");
 
 //help.html
-const homeElement = document.querySelector(".header-grid-imgItem");  // index.html 빼고 모두 사용
+const homeElement = document.querySelector(".header-grid-imgItem"); // index.html 빼고 모두 사용
 const helpItemElements = document.querySelectorAll(".help-item-center");
 
 //take.html
 const takeItemElements = document.querySelectorAll(".take-item-center");
+
+//main.html
+const mainHelpElements = document.querySelector("#help-main");
+const prevButtonElement = document.querySelector("#prev-to-take");
+const nextButtonElement = document.querySelector("#next-to-detail");
+const caterogyElemnts = document.querySelectorAll(".menu-category-items");
+const menuContainer = document.querySelector("#menu-sub-container");
+const shoppingBasketContainer = document.querySelector(
+  ".shopping-basket-item-container"
+);
+const totalPriceElement = document.querySelector(".shopping-basket-sum h3");
+
+let menuSubItemElements = document.querySelectorAll(".menu-sub-items");
+let shoppingBasketItemElements = document.querySelectorAll(
+  ".shopping-basket-items"
+);
+let cancelButtonElements = document.querySelectorAll(".shopping-basket-x");
+let downButtonElements = document.querySelectorAll(
+  ".shopping-basket-downButton"
+);
+let upButtonElements = document.querySelectorAll(".shopping-basket-upButton");
