@@ -32,6 +32,12 @@ function mainPage(event) {
 //main.html -> take.html
 function prevTakePage() {
   initPage = true;
+  shoppingBasketItemElements = document.querySelectorAll(
+    ".shopping-basket-items"
+  );
+  for(shoppingBasketItemElement of shoppingBasketItemElements){
+    menuBasketInfos.push({row: shoppingBasketItemElement.dataset.row, column: shoppingBasketItemElement.dataset.column});
+  }
   saveVariable();
   location.href = "./take.html";
 }

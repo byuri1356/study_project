@@ -253,10 +253,31 @@ for (caterogyElemnt of caterogyElemnts) {
   caterogyElemnt.addEventListener("click", selectCategory);
 }
 
+//
+//init main page
+//
 selectCategory();
 
 if (menuBasketInfos.length != 0) {
   for (const menuBasketInfo of menuBasketInfos) {
     makeShoppingBasketContainerChild(menuBasketInfo.row, menuBasketInfo.column);
   }
+  totalPriceElement.innerText = total_price + "원";
+
+  cancelButtonElements = document.querySelectorAll(".shopping-basket-x");
+  for (cancelButtonElement of cancelButtonElements) {
+    cancelButtonElement.addEventListener("click", cancelMenu);
+  }
+
+  downButtonElements = document.querySelectorAll(".shopping-basket-downButton");
+  for (downButtonElement of downButtonElements) {
+    downButtonElement.addEventListener("click", downAFew);
+  }
+
+  upButtonElements = document.querySelectorAll(".shopping-basket-upButton");
+  for (upButtonElement of upButtonElements) {
+    upButtonElement.addEventListener("click", upAFew);
+  }
+
+  menuBasketInfos.splice(0);
 }
