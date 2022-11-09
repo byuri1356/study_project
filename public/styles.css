@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: "IBM Plex Sans KR", sans-serif;
@@ -6,8 +5,49 @@ body {
   background-color: rgb(253, 249, 253);
 }
 
-.header-grid-container{
-  margin: 1.5rem 5rem;
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+#carouselExampleDark {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: 80%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.carousel-inner {
+  margin: 2rem 10%;
+  width: 80%;
+  height: 90%;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 90%;
+  height: 20rem;
+}
+
+.carousel-caption button{
+  position: absolute;
+  left: 44%;
+  top: 40%;
+}
+
+.header-grid-container {
+  margin: 1.5rem 20%;
   display: grid;
   grid-template-columns: 7rem minmax(25rem, auto) 7rem;
   grid-template-rows: 7rem;
@@ -22,21 +62,21 @@ body {
   cursor: pointer;
 }
 
-.header-grid-h1Item{
+.header-grid-h1Item {
   margin: 0;
   justify-self: center;
   font-size: 4.5rem;
 }
 
-
-.alert-button-item {
-    margin-top: 0.5rem;
-    background-color: rgb(235, 47, 0);
-    border-radius: 10px;
-    border: 0;
-    outline: 0;
-    font-size: 2rem;
-    font-weight: 600;
-    color: azure;
-    cursor:pointer;
-  }
+.alert-button-item,
+.close-button-item {
+  margin-top: 0.5rem;
+  background-color: rgb(235, 47, 0);
+  border-radius: 10px;
+  border: 0;
+  outline: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: azure;
+  cursor: pointer;
+}

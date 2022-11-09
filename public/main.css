@@ -1,5 +1,5 @@
 #main-grid-container {
-  margin-left: 7rem;
+  margin: 0 20%;
   display: grid;
   grid-template-columns: minmax(30rem, 55rem) 25rem;
   grid-template-rows: 8.5rem minmax(18rem, auto);
@@ -118,7 +118,7 @@ span {
 }
 
 .footer-grid-container {
-  margin: 1.5rem 7rem;
+  margin: 1.5rem 20%;
   text-align: right;
 }
 

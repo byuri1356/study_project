@@ -185,7 +185,7 @@ function loadVariable() {
   console.log(currentRow);
   console.log(initPage);
   console.log(menuBasketInfos);
-  
+
   console.log(menu);
 }
 
@@ -208,6 +208,9 @@ const takeItemElements = document.querySelectorAll(".take-item-center");
 
 //main.html
 const mainHelpElements = document.querySelector("#help-main");
+const backdropElements = document.querySelector("#backdrop"); // detail.html 에서도 사용
+const carouselElements = document.querySelector("#carouselExampleDark"); // detail.html 에서도 사용
+const closeButtonElements = document.querySelectorAll(".close-button-item"); // detail.html 에서도 사용
 const prevButtonElement = document.querySelector("#prev-to-take");
 const nextButtonElement = document.querySelector("#next-to-detail");
 const caterogyElemnts = document.querySelectorAll(".menu-category-items");
