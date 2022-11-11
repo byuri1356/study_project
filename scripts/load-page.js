@@ -42,8 +42,8 @@ function prevTakePage() {
   location.href = "./take.html";
 }
 
-//main.html -> detail.html
-function nextDetailPage() {
+//main.html -> check.html
+function nextCheckPage() {
   initPage = true;
   shoppingBasketItemElements = document.querySelectorAll(
     ".shopping-basket-items"
@@ -52,7 +52,31 @@ function nextDetailPage() {
     menuBasketInfos.push({row: shoppingBasketItemElement.dataset.row, column: shoppingBasketItemElement.dataset.column});
   }
   saveVariable();
-  location.href = "./detail.html";
+  location.href = "./check.html";
+}
+
+//check.html -> main.html     //// 이부분 내용 마지막에 수정필요 
+function prevMainPage() {
+  shoppingBasketItemElements = document.querySelectorAll(
+    ".shopping-basket-items"
+  );
+  for(shoppingBasketItemElement of shoppingBasketItemElements){
+    menuBasketInfos.push({row: shoppingBasketItemElement.dataset.row, column: shoppingBasketItemElement.dataset.column});
+  }
+  saveVariable();  
+  location.href = "./main.html";
+}
+
+//check.html -> card.html     //// 이부분 내용 마지막에 수정필요      
+function nextCardPage() {   
+  shoppingBasketItemElements = document.querySelectorAll(
+    ".shopping-basket-items"
+  );
+  for(shoppingBasketItemElement of shoppingBasketItemElements){
+    menuBasketInfos.push({row: shoppingBasketItemElement.dataset.row, column: shoppingBasketItemElement.dataset.column});
+  }
+  saveVariable();  
+  location.href = "./card.html";
 }
 
 //
@@ -84,11 +108,21 @@ if (takeItemElements != null) {
 }
 
 //main.html -> take.html
-if (prevButtonElement != null) {
-  prevButtonElement.addEventListener("click", prevTakePage);
+if (prevToTakeButtonElement != null) {
+  prevToTakeButtonElement.addEventListener("click", prevTakePage);
 }
 
-//main.html -> detail.html
-if (nextButtonElement != null) {
-  nextButtonElement.addEventListener("click", nextDetailPage);
+//main.html -> check.html
+if (nextToDetailButtonElement != null) {
+  nextToDetailButtonElement.addEventListener("click", nextCheckPage);
+}
+
+//check.html -> main.html
+if(prevToMainButtonElement != null){
+  prevToMainButtonElement.addEventListener("click", prevMainPage);
+}
+
+//check.html -> card.html
+if(nextToCardButtonElement != null){
+  nextToCardButtonElement.addEventListener("click", nextCardPage);
 }

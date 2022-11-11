@@ -1,0 +1,68 @@
+h1 {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: normal;
+    text-align: center;
+    background-color: rgb(110, 110, 197);
+    color: rgb(44, 44, 66);
+    font-size: 3rem;
+    margin: 0 auto 0.5rem auto;
+    width: 250px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 8px rgb(68, 67, 67);
+  }
+  
+  h2 {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    text-align: center;
+    color: blue;
+    margin: 0.1rem auto 0 auto;
+  }
+  
+  main li {
+    overflow: hidden;
+  }
+  
+  .Image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1000px;
+    margin: 20px auto;
+  }
+  
+  .Image-item {
+    margin: 0 auto;
+    width: 450px;
+    height: 370px;
+  }
+  
+  .Image-item:hover{
+      transform: scale(1.1);
+  }
+  
+  #Samsung {
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgb(68, 67, 67);
+    width: 460px;
+    height: 350px;
+  }
+  
+  #Kakao {
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgb(68, 67, 67);
+    width: 460px;
+    height: 350px;
+  }
+  
+  #Cd {
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgb(68, 67, 67);
+    width: 460px;
+    height: 350px;
+  }
+  
+  #Payco {
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgb(68, 67, 67);
+    width: 460px;
+    height: 350px;
+  }

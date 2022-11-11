@@ -212,8 +212,8 @@ const headerTitleElements = document.querySelector("#header-title");
 const backdropElements = document.querySelector("#backdrop"); // detail.html 에서도 사용
 const carouselElements = document.querySelector("#carouselExampleDark"); // detail.html 에서도 사용
 const closeButtonElements = document.querySelectorAll(".close-button-item"); // detail.html 에서도 사용
-const prevButtonElement = document.querySelector("#prev-to-take");
-const nextButtonElement = document.querySelector("#next-to-detail");
+const prevToTakeButtonElement = document.querySelector("#prev-to-take");
+const nextToDetailButtonElement = document.querySelector("#next-to-detail");
 const caterogyElemnts = document.querySelectorAll(".menu-category-items");
 const menuContainer = document.querySelector("#menu-sub-container");
 const shoppingBasketContainer = document.querySelector(
@@ -230,3 +230,11 @@ let downButtonElements = document.querySelectorAll(
   ".shopping-basket-downButton"
 );
 let upButtonElements = document.querySelectorAll(".shopping-basket-upButton");
+
+//check.html
+const itemDivElement = document.querySelector(".item-div");
+const prevToMainButtonElement = document.querySelector("#prev-to-main");
+const nextToCardButtonElement = document.querySelector("#next-to-card");
+//check.js 변수는 여기로이동  그리고 함수or 실행내용은 모두 basket.js로 이동
+const totalCost = document.getElementById('cost');
+const orderMethod = document.getElementById('method-id');
