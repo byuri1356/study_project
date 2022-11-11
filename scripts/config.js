@@ -208,6 +208,7 @@ const takeItemElements = document.querySelectorAll(".take-item-center");
 
 //main.html
 const mainHelpElements = document.querySelector("#help-main");
+const headerTitleElements = document.querySelector("#header-title");
 const backdropElements = document.querySelector("#backdrop"); // detail.html 에서도 사용
 const carouselElements = document.querySelector("#carouselExampleDark"); // detail.html 에서도 사용
 const closeButtonElements = document.querySelectorAll(".close-button-item"); // detail.html 에서도 사용

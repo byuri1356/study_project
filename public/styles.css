@@ -49,7 +49,7 @@ body {
 .header-grid-container {
   margin: 1.5rem 20%;
   display: grid;
-  grid-template-columns: 7rem minmax(25rem, auto) 7rem;
+  grid-template-columns: 7rem minmax(45rem, auto) 7rem;
   grid-template-rows: 7rem;
   align-items: start;
 }

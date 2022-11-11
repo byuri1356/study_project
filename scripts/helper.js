@@ -31,3 +31,11 @@ if(backdropElements != null && closeButtonElements != null){
     }
 }
 
+//
+//init page
+//
+
+if(needHelp == 1){
+  console.log(needHelp);
+  openMainHelp();
+}

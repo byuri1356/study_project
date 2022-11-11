@@ -2,6 +2,14 @@
 //function
 //
 
+//take in or out?
+if(takeInOUT == 1){
+  headerTitleElements.innerText ="메뉴 & 주문(매장식사)";
+}
+else{
+  headerTitleElements.innerText ="메뉴 & 주문(포장)";
+}
+
 //donw a few
 function downAFew(event) {
   const selectedDownButton = event.target;

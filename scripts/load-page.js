@@ -44,6 +44,13 @@ function prevTakePage() {
 
 //main.html -> detail.html
 function nextDetailPage() {
+  initPage = true;
+  shoppingBasketItemElements = document.querySelectorAll(
+    ".shopping-basket-items"
+  );
+  for(shoppingBasketItemElement of shoppingBasketItemElements){
+    menuBasketInfos.push({row: shoppingBasketItemElement.dataset.row, column: shoppingBasketItemElement.dataset.column});
+  }
   saveVariable();
   location.href = "./detail.html";
 }
