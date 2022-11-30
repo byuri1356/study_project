@@ -82,10 +82,11 @@ body {
 }
 
 .footer-grid-container {
-  margin: 1.5rem 20%;
+  margin: 1.5rem 1%;
   text-align: right;
 }
 
 .footer-grid-container button {
   margin-left: 1rem;
 }
+

@@ -236,5 +236,9 @@ const itemDivElement = document.querySelector(".item-div");
 const prevToMainButtonElement = document.querySelector("#prev-to-main");
 const nextToCardButtonElement = document.querySelector("#next-to-card");
 //check.js 변수는 여기로이동  그리고 함수or 실행내용은 모두 basket.js로 이동
-const totalCost = document.getElementById('cost');
+let totalCost = document.getElementById('cost');
 const orderMethod = document.getElementById('method-id');
+
+let downCntButton = document.querySelectorAll('.article-button-down');
+let upCntButton = document.querySelectorAll('.article-button-up');
+let cancelCntButton = document.querySelectorAll('.article-button-x')

@@ -22,7 +22,7 @@ main p {
 
 .item {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   background-color: rgb(218, 198, 198);
   text-align: center;
 }
@@ -35,9 +35,10 @@ main p {
 
 .article {
   font-size: 1.5rem;
-  width: 12rem;
+  width: 28.57rem;
   border-bottom: 1px solid rgb(0, 0, 0);
   height: 2.5rem;
+  text-align: center;
 }
 
 table {
@@ -128,4 +129,46 @@ nav a {
 
 nav a:hover {
   font-size: 2.2rem;
+}
+
+.article-button{
+  /* font-size: 1.5rem; */
+  width: 2rem;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 2.5rem;
+  text-align: center;
+}
+
+
+.article-button-x{
+  /* font-size: 1.5rem; */
+  /* width: 2rem;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 2.5rem; */
+  text-align: center;
+}
+
+.article-button-up{
+  /* font-size: 1.5rem; */
+  /* width: 2rem;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 2.5rem; */
+  text-align: center;
+}
+
+.article-button-down{
+  /* font-size: 1.5rem; */
+  /* width: 2rem;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 2.5rem; */
+  text-align: center;
+}
+
+.footer-grid-containers {
+  margin: 1.5rem 1%;
+  text-align: right;
+}
+
+.footer-grid-containers button {
+  margin-left: 1rem;
 }
