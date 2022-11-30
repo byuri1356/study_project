@@ -79,6 +79,16 @@ function nextCardPage() {
   location.href = "./card.html";
 }
 
+//card.html -> pay-complete.html
+function payCompletePage(){
+  location.href = "./pay-complete.html";
+}
+
+//pay-complete.html -> index.html
+function indexPage(){
+  location.href = "./index.html";
+}
+
 //
 //addEventListener load-page function
 //
@@ -125,4 +135,17 @@ if(prevToMainButtonElement != null){
 //check.html -> card.html
 if(nextToCardButtonElement != null){
   nextToCardButtonElement.addEventListener("click", nextCardPage);
+}
+
+//card.html -> pay-complete.html
+if(cardSelectElements != null){
+  console.log(cardSelectElements);
+  for(const cardSelectElement of cardSelectElements){
+    cardSelectElement.addEventListener("click", payCompletePage);
+  }
+}
+
+//pay-complete.html -> index.html
+if(payCompletePageBodyElement != null){
+  payCompletePageBodyElement.addEventListener("click", indexPage);
 }

@@ -37,13 +37,13 @@ body {
 .carousel-caption {
   position: absolute;
   top: 90%;
-  height: 20rem;
+  height: 80%;
 }
 
 .carousel-caption button{
   position: absolute;
   left: 44%;
-  top: 40%;
+  top: 30%;
 }
 
 .header-grid-container {
