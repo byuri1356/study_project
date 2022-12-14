@@ -196,7 +196,7 @@ localStorage.clear();
 //const element
 //
 
-//index.html
+//start.html
 const bodyElement = document.querySelector("#index-page-body");
 
 //help.html

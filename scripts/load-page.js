@@ -2,12 +2,12 @@
 //make load-page function
 //
 
-// * -> index.html
+// * -> start.html
 function homePage() {
-  location.href = "./index.html";
+  location.href = "./start.html";
 }
 
-//index.html -> help.html
+//start.html -> help.html
 function helpPage() {
   saveVariable();
   location.href = "./help.html";
@@ -84,21 +84,21 @@ function payCompletePage(){
   location.href = "./pay-complete.html";
 }
 
-//pay-complete.html -> index.html
-function indexPage(){
-  location.href = "./index.html";
+//pay-complete.html -> start.html
+function startPage(){
+  location.href = "./start.html";
 }
 
 //
 //addEventListener load-page function
 //
 
-// * -> index.html
+// * -> start.html
 if (homeElement != null) {
   homeElement.addEventListener("click", homePage);
 }
 
-//index.html -> help.html
+//start.html -> help.html
 if (bodyElement != null) {
   bodyElement.addEventListener("click", helpPage);
 }
@@ -145,7 +145,7 @@ if(cardSelectElements != null){
   }
 }
 
-//pay-complete.html -> index.html
+//pay-complete.html -> start.html
 if(payCompletePageBodyElement != null){
-  payCompletePageBodyElement.addEventListener("click", indexPage);
+  payCompletePageBodyElement.addEventListener("click", startPage);
 }
